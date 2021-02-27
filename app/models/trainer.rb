@@ -4,7 +4,9 @@ class Trainer < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :name,presence: true
+  validates :name, presence: true
 
   enum gender: [:male, :female, :other]
+
+  has_many :teams, dependent: :delete_all
 end
