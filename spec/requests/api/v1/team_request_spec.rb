@@ -31,7 +31,7 @@ RSpec.describe '/api/v1/teams', type: :request do
         }.to change(Team, :count).by(0)
       end
 
-      it "renders a erro 422" do
+      it 'renders a erro 422' do
         post api_v1_teams_url, params: { team: { name: nil } }
         expect(response).to have_http_status(422)
       end
