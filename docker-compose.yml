@@ -1,0 +1,23 @@
+version: '3.7'
+services:
+  postgres:
+    image: postgres:12.6
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    env_file: .env
+    ports:
+      - "5433:5432"
+
+  app:
+    build: .
+    depends_on:
+      - postgres
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/teamPokedex
+    env_file: .env
+    command: bash -c "rm -f tmp/pids/server.pid && sleep 100000"
+
+volumes:
+  postgres:
