@@ -12,13 +12,13 @@
         <%= link_to t(:teams, scope: 'menu'), teams_path, class: "nav-link #{'active' if controller_path == 'teams'}" %>
       </li>
       <% if current_trainer %>
+        <%# <li class="nav-item "> %>
+          <%# link_to '#', class: "nav-link #{'active' if controller_path == 'profile'}" do %>
+            <%# current_trainer.name %>
+          <%# end %>
+        <%# </li> %>
         <li class="nav-item dropdown">
-          <%= link_to profile, class: "nav-link dropdown-toggle #{'active' if controller_path == 'profile' || controller_path == 'phone_numbers' || controller_path == 'addresses' }", id: 'navbarDropdownMenuLink', data: { toggle: 'dropdown' }, aria: { haspopup: 'true', expanded: 'false' } do %>
-            <%= current_trainer.name %>
-          <% end %>
-        </li>
-        <li class="nav-item dropdown">
-          <%= button_to destroy_trainer_session_path, method: :delete, class: 'dropdown-item' do %>
+          <%= button_to destroy_trainer_session_path, method: :delete, class: 'nav-link btn' do %>
             <%= t(:logout, scope: 'menu.dropdown') %>
           <% end %>
         </li>
