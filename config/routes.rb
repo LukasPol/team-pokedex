@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root 'teams#index'
+  get 'home/index'
+  root 'home#index'
   devise_for :trainers
   resources :teams
   resources :profile, only: [:show]
