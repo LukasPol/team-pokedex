@@ -32,7 +32,7 @@ or
 1. `$ cp .env.sample .env`
 1. `$ docker-compose build`
 1. `$ docker-compose up` (you can use the flag `-d`)
-1. `$ docker-compose exec web bash`
+1. `$ docker-compose exec app bash`
 1. `$ rake db:create`
 1. `$ rake db:migrate`
 1. `$ rails s -b 0.0.0.0`
