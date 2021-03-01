@@ -6,8 +6,8 @@ class ApplicationController < ActionController::Base
   protected
     layout :layout_by_resource
     def configure_permitted_parameters
-      devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :age, :gender])
-      devise_parameter_sanitizer.permit(:account_update, keys: [:name, :age, :gender])
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :age, :gender, :picture])
+      devise_parameter_sanitizer.permit(:account_update, keys: [:name, :age, :gender, :picture])
     end
 
   private
