@@ -44,7 +44,7 @@ group :development, :test do
   gem 'rubocop-performance', '1.6.1'
   gem 'rubocop-rails', '2.6.0'
   # Use Rspec as the main testing framework, added on development environment to automatically handle with generators and tasks
-  gem 'rspec-rails', '4.0.1'
+  gem 'rspec-rails', '4.0.2'
 end
 
 group :development do
