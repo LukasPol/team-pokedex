@@ -15,11 +15,3 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
-
-window.jQuery = window.$ = require('jquery');
-require('popper.js/dist/umd/popper');
-window.Popper = require('popper.js').default;
-// require('@popperjs/core')
-import 'bootstrap'
-
-require('@fortawesome/fontawesome-free/js/all');
