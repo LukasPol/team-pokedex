@@ -3,5 +3,25 @@
 <%= link_to_back(teams_path) %>
 <%= link_to_detail_resource(@team, t(:show_model, model: t(:team, scope: 'activerecord.models'))) %>
 
-<%= render 'form', team: @team %>
+<%= form_for @team do |form| %>
+  <% if @team.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@team.errors.count, "error") %> prohibited this team from being saved:</h2>
 
+      <ul>
+        <% @team.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %><br />
+    <%= form.text_field :name, autofocus: true, class: 'form-control' %>
+  </div>
+
+  <div class="actions mt-3">
+    <%= form.submit t(:edit_model, model: t(:team, scope: 'activerecord.models')), class: 'btn btn-primary' %>
+  </div>
+<% end %>

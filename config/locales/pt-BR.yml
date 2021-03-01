@@ -1,4 +1,5 @@
 pt-BR:
+  webapp_slogan: "Times Pokemons"
   created: "%{model} foi criado com sucesso."
   created_f: "%{model} foi criada com sucesso."
   create_model: "Criar %{model}"
