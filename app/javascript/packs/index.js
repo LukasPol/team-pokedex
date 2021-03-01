@@ -1,9 +1,17 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from "react-dom";
+// import App from "../components/App";
+import Home from "../components/Home";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
-document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(
-    <Hello name="React" />,
-    document.body.appendChild(document.createElement('div')),
-  )
-})
+console.log('AAA')
+
+document.addEventListener("DOMContentLoaded", () => {
+  render(
+    <Router>
+      <Route path="/" component={Home} />
+    </Router>,
+    // <Home />,
+    document.body.appendChild(document.createElement("div"))
+  );
+});
