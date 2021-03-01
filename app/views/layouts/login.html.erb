@@ -5,7 +5,6 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
@@ -15,12 +14,9 @@
   </head>
 
   <body>
-    <div class="container mt-5">
-      <%# <div class="row alerts"> %>
-        <%= render "shared/flashes" %>
-      <%# </div> %>
-      <div class="row">
-        <div class="col-sm-12">
+    <div class="container pt-3">
+      <div class="row mt-5">
+        <div class="col-sm-12 col-md-7 mx-auto bg-light p-5" style="border-radius: 30px; box-shadow: 1px 1px 20px rgba(0,0,0,.3)">
           <%= yield %>
         </div>
       </div>
