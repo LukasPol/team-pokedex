@@ -4,26 +4,31 @@ class TeamsController < ApplicationController
 
   # GET /teams or /teams.json
   def index
+    authorize Team, :index?
     @teams = Team.all
   end
 
   # GET /teams/1 or /teams/1.json
   def show
+    authorize @team, :show?
   end
 
   # GET /teams/new
   def new
     @team = Team.new
     @team.pokemons.build
+    authorize @team, :new?
   end
 
   # GET /teams/1/edit
   def edit
+    authorize @team, :edit?
   end
 
   # POST /teams or /teams.json
   def create
     @team = Team.new(team_params)
+    authorize @team, :create?
     params[:team][:pokemons_attributes].each do |index, pokemon|
       unless pokemon['name'].blank?
         pokeapi = GetPokedex.new(pokemon['name']).get_pokemon()
@@ -48,6 +53,7 @@ class TeamsController < ApplicationController
 
   # PATCH/PUT /teams/1 or /teams/1.json
   def update
+    authorize @team, :update?
     if @team.update(team_params)
       redirect_to @team, notice: t(:updated, model: t(:team, scope: 'activerecord.models'))
     else
@@ -57,6 +63,7 @@ class TeamsController < ApplicationController
 
   # DELETE /teams/1 or /teams/1.json
   def destroy
+    authorize @team, :detroy?
     @team.destroy
     redirect_to teams_url, notice: t(:deleted, model: t(:team, scope: 'activerecord.models'))
   end
