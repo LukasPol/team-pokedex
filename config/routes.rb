@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'teams#index'
   devise_for :trainers
   resources :teams
+  resources :profile, only: [:show]
 
   namespace :api do
     namespace :v1 do
