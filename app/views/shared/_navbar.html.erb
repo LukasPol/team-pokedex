@@ -13,16 +13,15 @@
       </li>
       <% if current_trainer %>
         <li class="nav-item dropdown">
-          <%= link_to '#', class: "nav-link dropdown-toggle #{'active' if controller_path == 'profile' || controller_path == 'phone_numbers' || controller_path == 'addresses' }", id: 'navbarDropdownMenuLink', data: { toggle: 'dropdown' }, aria: { haspopup: 'true', expanded: 'false' } do %>
+          <%= link_to profile, class: "nav-link dropdown-toggle #{'active' if controller_path == 'profile' || controller_path == 'phone_numbers' || controller_path == 'addresses' }", id: 'navbarDropdownMenuLink', data: { toggle: 'dropdown' }, aria: { haspopup: 'true', expanded: 'false' } do %>
             <%= current_trainer.name %>
           <% end %>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <%# link_to t(:profile, scope: 'menu.dropdown'), profile_path, class: 'dropdown-item' %>
-          </div>
         </li>
-        <%= button_to destroy_trainer_session_path, method: :delete, class: 'dropdown-item' do %>
-          <%= t(:logout, scope: 'menu.dropdown') %>
-        <% end %>
+        <li class="nav-item dropdown">
+          <%= button_to destroy_trainer_session_path, method: :delete, class: 'dropdown-item' do %>
+            <%= t(:logout, scope: 'menu.dropdown') %>
+          <% end %>
+        </li>
 
       <% end %>
     </ul>
