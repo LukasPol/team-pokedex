@@ -8,9 +8,9 @@ Click here to visit: [TeamPokedex](https://team-pokedex.herokuapp.com)
 <img src="tmp/imgReadMe/indexTeam.png" style="max-height:350px" alt="Team Index">
 <img src="tmp/imgReadMe/showTeam.png" style="max-height:350px" alt="Team Show">
 
-You can register yours teams and shared with yours friends;
-You can see all teams of another trainers;
-And now, **Who will be the strongest?**
+- You can register yours teams and shared with yours friends;
+- You can see all teams of another trainers;
+- And now, **Who will be the strongest?**
 
 ## Pre-requisites
 
